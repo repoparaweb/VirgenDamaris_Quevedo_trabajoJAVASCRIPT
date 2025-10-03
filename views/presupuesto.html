@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Presupuesto - IA o Yo</title>
+  <link rel="icon" type="image/jpg" href="../images/favicon.jpg">
+  <link rel="stylesheet" href="../css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Header (copiado de index.html) -->
+  <header>
+    <div class="container">
+      <h1>
+        <a href="../index.html">
+          <img src="../images/logo.jpg" alt="IA o Yo - Logo" class="logo" width="500" height="500">
+          <span class="logo-text">IA o Yo</span>
+        </a>
+      </h1>
+      <nav>
+        <ul>
+          <li><a href="../index.html" class="nav-link">Inicio</a></li>
+          <li><a href="./galeria.html" class="nav-link">Galería</a></li>
+          <li><a href="presupuesto.html" class="nav-link">Presupuesto</a></li>
+          <li><a href="./contacto.html" class="nav-link">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="presupuesto-container">
+    <div class="container">
+      <h1>Calcula tu presupuesto</h1>
+      <p>Elige el servicio que necesitas y personalízalo a tu medida.</p>
+
+      <form id="form-presupuesto">
+        <!-- Parte 1: Datos de contacto -->
+        <fieldset>
+          <legend>Datos de contacto</legend>
+          <div class="form-group">
+            <label for="nombre">Nombre *</label>
+            <input type="text" id="nombre" name="nombre" required>
+            <span class="error" id="error-nombre"></span>
+          </div>
+          <div class="form-group">
+            <label for="apellidos">Apellidos *</label>
+            <input type="text" id="apellidos" name="apellidos" required>
+            <span class="error" id="error-apellidos"></span>
+          </div>
+          <div class="form-group">
+            <label for="telefono">Teléfono *</label>
+            <input type="tel" id="telefono" name="telefono" required>
+            <span class="error" id="error-telefono"></span>
+          </div>
+          <div class="form-group">
+            <label for="email">Correo electrónico *</label>
+            <input type="email" id="email" name="email" required>
+            <span class="error" id="error-email"></span>
+          </div>
+        </fieldset>
+
+        <!-- Parte 2: Opciones de presupuesto -->
+        <fieldset>
+          <legend>Personaliza tu servicio</legend>
+
+          <div class="form-group">
+            <label for="producto">Producto *</label>
+            <select id="producto" name="producto" required>
+              <option value="">Selecciona un producto</option>
+              <option value="100">Curso Básico de IA — €100</option>
+              <option value="300">Consultoría Personalizada — €300</option>
+              <option value="500">Taller para Equipos — €500</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="plazo">Plazo (meses) *</label>
+            <input type="number" id="plazo" name="plazo" min="1" max="12" value="1" required>
+            <small>Descuento progresivo: 5% por cada mes adicional (máx. 50% a los 12 meses).</small>
+          </div>
+
+          <div class="form-group">
+            <label>Extras (opcionales)</label>
+            <div class="checkbox-group">
+              <label><input type="checkbox" value="50"> Manual en PDF (+€50)</label>
+              <label><input type="checkbox" value="100"> Sesión adicional (+€100)</label>
+              <label><input type="checkbox" value="200"> Soporte prioritario (+€200)</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Presupuesto total:</label>
+            <p class="total">€<span id="total">0.00</span></p>
+          </div>
+
+          <div class="form-group condiciones">
+            <label>
+              <input type="checkbox" id="condiciones" required>
+              Acepto las <a href="#" target="_blank">condiciones de privacidad</a> *
+            </label>
+            <span class="error" id="error-condiciones"></span>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit">Enviar presupuesto</button>
+            <button type="reset">Limpiar formulario</button>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 IA o Yo — Potenciando humanos con inteligencia artificial.</p>
+      <div class="redes-sociales">
+        <!-- enlaces de prueba a Redes sociales, ninguna me pertenece ni ha sido creada por mi -->
+        <a href="https://www.facebook.com/groups/223633821729067" target="_blank" rel="noopener" aria-label="Facebook">Facebook</a>
+        <a href="https://x.com/iia_es?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank" rel="noopener" aria-label="Twitter">Twitter</a>
+        <a href="https://www.youtube.com/@la_inteligencia_artificial" target="_blank" rel="noopener" aria-label="YouTube">YouTube</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../js/script.js"></script>
+  
+</body>
+</html>

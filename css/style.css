@@ -1,0 +1,723 @@
+/* ===== VARIABLES ===== */
+:root {
+  --color-primary: #007BFF;
+  --color-secondary: #6c757d;
+  --color-light: #f8f9fa;
+  --color-dark: #212529;
+  --font-main: 'Inter', sans-serif;
+}
+
+/* ===== RESET Y BASE ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  line-height: 1.6;
+  color: var(--color-dark);
+  background-color: #fff;
+}
+
+/*defino esta clase por separado para aplicarlo a diferentes contenedores*/
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* ===== HEADER ===== */
+header {
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+header h1 a {
+  text-decoration: none;
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--color-dark);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--color-primary);
+}
+
+/* Estilo para el menu que este ACTIVO */
+nav li a.active {
+  background-color: #d5d6dab4;
+  color: var(--color-dark);
+  font-weight: bold;
+  border-bottom: 3px solid #fff;
+  border-radius: 3px;
+  padding: 3px 5px;
+}
+
+/* ===== HERO ===== */
+.hero {
+  background-image: url('../images/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  color: white;
+  padding: 5rem 0;
+  text-align: center;
+}
+
+/* Overlay oscuro */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+/* Contenido del hero: encima del overlay + centrado con container */
+.hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content h2 strong {
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+}
+
+.btn {
+  display: inline-block;
+  background: white;
+  color: var(--color-primary);
+  padding: 0.8rem 1.8rem;
+  margin: 0.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+.btn-outline:hover {
+  background: white;
+  color: var(--color-primary);
+}
+
+/* ===== NOTICIAS ===== */
+.noticias-section {
+  padding: 4rem 0;
+  background-color: var(--color-light);
+}
+
+.noticias-section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--color-dark);
+}
+
+.noticias-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.noticia-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.noticia-card:hover {
+  transform: translateY(-5px);
+}
+
+.noticia-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.noticia-content {
+  padding: 1.2rem;
+}
+
+.noticia-content h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.noticia-content .meta {
+  font-size: 0.9rem;
+  color: var(--color-secondary);
+  margin-bottom: 1rem;
+}
+
+.noticia-content a {
+  display: inline-block;
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.noticia-content a:hover {
+  text-decoration: underline;
+}
+
+/* ===== SERVICIOS ===== */
+.servicios-section {
+  padding: 4rem 0;
+}
+
+.servicios-section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.servicios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.servicio-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.servicio-card:hover {
+  transform: translateY(-5px);
+}
+
+.servicio-card h3 {
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+}
+
+.servicio-card a {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.servicio-card a:hover {
+  text-decoration: underline;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--color-dark);
+  color: white;
+  text-align: center;
+  padding: 1.5rem 0;
+  margin-top: 3rem;
+}
+
+footer .redes-sociales {
+  margin-top: 10px;
+  text-align: center;
+}
+
+footer .redes-sociales a {
+  color: #ece6e6;
+  text-decoration: none;
+  margin: 0 8px;
+  font-size: 14px;
+}
+
+footer .redes-sociales a:hover {
+  text-decoration: underline;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  header .container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  nav ul {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero-content h2 {
+    font-size: 2rem;
+  }
+
+  .btn {
+    display: block;
+    margin: 0.5rem auto;
+    max-width: 250px;
+  }
+}
+
+/* ===== LOGO ===== */
+header h1 {
+  margin: 0;
+}
+
+header .logo {
+  width: auto;
+  height: 50px; 
+  max-width: 100%;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+header .logo-text {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  text-decoration: none;
+  vertical-align: middle;
+}
+
+header a {
+  text-decoration: none;
+}
+
+/* Botón de suscripción dentro de la tarjeta */
+.boton-suscribirse {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.boton-suscribirse:hover {
+  background: #0056b3;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.modal-contenido {
+  background-color: white;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+#cerrar-modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #888;
+}
+
+#cerrar-modal:hover {
+  color: #000;
+}
+
+#email-suscripcion {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+#formulario-suscripcion button {
+  width: 100%;
+  padding: 10px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#formulario-suscripcion button:hover {
+  background: #218838;
+}
+
+/* ===== GALERIA ===== */
+
+.galeria-container {
+      padding: 3rem 0;
+      background-color: var(--color-light);
+      text-align: center;
+    }
+
+main div p{
+  margin-bottom: 15px;
+}
+
+.imagen{
+  width: 250px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-right: 3px;
+  overflow: hidden; /* para que no se salgan los bordes de la imagen */
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.imagen:hover {
+  transform: translateY(-5px);
+}
+
+
+/* ===== PRESUPUESTO ===== */
+.presupuesto-container {
+  background-color: var(--color-light);
+  padding: 3rem 0;
+}
+
+.presupuesto-container h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+form {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+fieldset {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+legend {
+  font-weight: 600;
+  font-size: 1.2rem;
+  padding: 0 0.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+input, select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.checkbox-group label {
+  display: block;
+  margin: 0.5rem 0;
+  font-weight: normal;
+}
+
+.total {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"] {
+  background: var(--color-primary);
+  color: white;
+}
+
+button[type="submit"]:hover {
+  background: #0056b3;
+}
+
+button[type="reset"] {
+  background: #6c757d;
+  color: white;
+}
+
+button[type="reset"]:hover {
+  background: #5a6268;
+}
+
+.error {
+  color: #dc3545;
+  font-size: 0.9rem;
+  display: block;
+  margin-top: 0.25rem;
+}
+
+small {
+  display: block;
+  color: #6c757d;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+
+/* ===== CONTACTO ===== */
+.contacto-container {
+  padding: 3rem 0;
+  background-color: var(--color-light);
+}
+
+.contacto-container h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+#form-contacto {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+#form-contacto .form-group {
+  margin-bottom: 1.5rem;
+}
+
+#form-contacto label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+#form-contacto input,
+#form-contacto textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+#form-contacto input:focus,
+#form-contacto textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+#form-contacto .error {
+  color: #dc3545;
+  font-size: 0.9rem;
+  display: block;
+  margin-top: 0.25rem;
+}
+
+#form-contacto .form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+#form-contacto button[type="submit"] {
+  background: var(--color-primary);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+#form-contacto button[type="submit"]:hover {
+  background: #0056b3;
+}
+
+#form-contacto button[type="reset"] {
+  background: #6c757d;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+#form-contacto button[type="reset"]:hover {
+  background: #5a6268;
+}
+
+/* ===== CONTACTO (MAPA) ===== */
+.contacto-container {
+  padding: 3rem 0;
+}
+
+.contacto-container h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+#map {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.form-ruta {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  margin: 2rem 0;
+}
+
+.form-ruta h3 {
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+}
+
+.form-ruta input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.form-ruta button {
+  padding: 0.75rem 1.5rem;
+  margin-right: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+#btn-calcular-ruta {
+  background: var(--color-primary);
+  color: white;
+}
+
+#btn-calcular-ruta:hover {
+  background: #0056b3;
+}
+
+#btn-mi-ubicacion {
+  background: #28a745;
+  color: white;
+}
+
+#btn-mi-ubicacion:hover {
+  background: #218838;
+}
+
+.datos-contacto {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  margin-top: 2rem;
+}
+
+.datos-contacto h3 {
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+}
+
+.datos-contacto p {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}

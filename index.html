@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="IA o Yo es un sitio dedicado a potenciar el talento humano con inteligencia artificial. Aquí encontrarás recursos, noticias y servicios personalizados.">
+  <meta property="og:title" content="IA o Yo — La IA no te reemplaza… te multiplica.">
+  <meta property="og:description" content="IA o Yo es un sitio dedicado a potenciar el talento humano con inteligencia artificial. Aquí encontrarás recursos, noticias y servicios personalizados.">
+  <meta property="og:image" content="./images/placeholder-news.jpg">
+  <meta property="og:url" content="https://tusitio.com/pagina">
+  <meta property="og:type" content="website">
+  
+  <title>IA o Yo — La IA no te reemplaza… te multiplica.</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpg" href="images/favicon.jpg">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Header / Navegación -->
+  <header>
+    <div class="container">
+      <h1>
+        <a href="index.html">
+          <img src="images/logo.jpg" alt="IA o Yo - Logo" class="logo" width="500" height="500">
+          <span class="logo-text">IA o Yo</span>
+        </a>
+      </h1>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="nav-link">Inicio</a></li>
+          <li><a href="./views/galeria.html" class="nav-link">Galería</a></li>
+          <li><a href="./views/presupuesto.html" class="nav-link">Presupuesto</a></li>
+          <li><a href="./views/contacto.html" class="nav-link">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+<section class="hero">
+  <div class="container hero-content">  <!-- ¡Ambas clases! -->
+    <h2>La IA no te reemplaza… <strong>te multiplica.</strong></h2>
+    <p>Domina las herramientas, entiende las tendencias y potencia tu talento con inteligencia artificial.</p>
+    <a href="views/presupuesto.html" class="btn">Calcula tu presupuesto</a>
+    <a href="views/contacto.html" class="btn btn-outline">Hablemos</a>
+  </div>
+</section>
+
+  <!-- Sección de Noticias (cargadas desde JSON) -->
+  <section class="noticias-section">
+    <div class="container">
+      <h2>Últimas noticias sobre Tecnología</h2>
+      <div id="noticias-container" class="noticias-grid">
+        <!-- Aquí se cargarán las noticias dinámicamente -->
+        <p>Cargando noticias...</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de Servicios -->
+  <section class="servicios-section">
+    <div class="container">
+      <h2>¿Qué podemos hacer por ti?</h2>
+      <div class="servicios-grid">
+        <div class="servicio-card">
+          <h3>Consultoría Personalizada</h3>
+          <p>Te ayudamos a integrar IA en tu negocio o carrera.</p>
+          <a href="views/presupuesto.html">Solicitar presupuesto</a>
+        </div>
+        <div class="servicio-card">
+          <h3>Cursos y Talleres</h3>
+          <p>Aprende a usar herramientas de IA sin ser técnico.</p>
+          <a href="views/presupuesto.html">Ver opciones</a>
+        </div>
+        <div class="servicio-card">
+          <h3>Informes Semanales</h3>
+          <p>Recibe un resumen ejecutivo de lo más importante en IA.</p>
+          <button id="abrir-modal-suscripcion" class="boton-suscribirse">Suscríbete</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal de Suscripción -->
+  <div id="modal-suscripcion" class="modal">
+    <div class="modal-contenido">
+      <span id="cerrar-modal">&times;</span>
+      <h3>¡Suscríbete a nuestro newsletter!</h3>
+      <p>Recibe un resumen ejecutivo de lo más importante en IA cada semana.</p>
+      <form id="formulario-suscripcion">
+        <input type="email" id="email-suscripcion" placeholder="Tu correo electrónico" required>
+        <button type="submit">Suscribirme</button>
+      </form>
+      <p id="mensaje-exito" style="color: green; display: none;">¡Gracias! Te has suscrito correctamente.</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 IA o Yo — Potenciando humanos con inteligencia artificial.</p>
+      <div class="redes-sociales">
+        <!-- enlaces de prueba a Redes sociales, ninguna me pertenece ni ha sido creada por mi -->
+        <a href="https://www.facebook.com/groups/223633821729067" target="_blank" rel="noopener" aria-label="Facebook">Facebook</a>
+        <a href="https://x.com/iia_es?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank" rel="noopener" aria-label="Twitter">Twitter</a>
+        <a href="https://www.youtube.com/@la_inteligencia_artificial" target="_blank" rel="noopener" aria-label="YouTube">YouTube</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/script.js"></script>
+</body>
+</html>
